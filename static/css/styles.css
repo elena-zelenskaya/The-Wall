@@ -1,0 +1,98 @@
+.container {
+	margin:40px auto;
+}
+
+form {
+	margin: 20px 50px;
+}
+
+
+.breadcrumbs {
+	font-size:20px;
+	font-weight:700;
+}
+
+.messages {
+	border: 2px solid red;
+	padding:15px 15px 15px 35px;
+	font-size:18px;
+	font-weight:500;
+}
+
+
+
+nav.navbar {
+	font-weight:600
+}
+
+.navbar-brand {
+	width:70%;
+}
+
+.navbar-text {
+	font-size:18px;
+}
+
+label[for="post_message"] {
+	font-weight:700;
+	font-size:22px;
+}
+label[for="post_comment"] {
+	font-weight:400;
+	font-size:18px;
+}
+
+.messages p {
+	color: red;
+	font-sise: 20px;
+	font-weight:700;
+}
+
+.post p {
+	font-size:16px
+}
+
+.comments {
+	margin-left:40px;
+}
+
+.post_info {
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:no-wrap;
+	align-items:center;
+	background-color:#f1ddf1;
+	padding:20px;
+}
+.comment_info {
+	display:flex;
+	justify-content:start;
+	flex-wrap:no-wrap;
+	align-items:center;
+}
+
+.author_info {
+	margin-right:15px;
+}
+
+.post {
+	background-color: whitesmoke;
+	padding:10px;
+	margin:8px 0;
+}
+
+.delete_btn .btn-danger {
+	background-color: #e678db;
+	border-color: #e678db;
+}
+.delete_btn form {
+	margin: 0;
+}
+.delete_btn form .form-group {
+	margin: 0;
+}
+
+.form-group .btn-secondary-dark {
+	background-color: #2f3235;
+	border-color: #2f3235;
+}
