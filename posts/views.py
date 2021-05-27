@@ -11,6 +11,7 @@ def index(request):
         context = {
 			"posts": Post.objects.all().order_by("-created_at"),
 			"comments": Comment.objects.all(),
+			"user": User.objects.get(id = request.session["userid"])
 		}
         return render(request, "posts/index.html", context)
     else:
@@ -25,7 +26,6 @@ def add_post(request):
         user_id = request.session["userid"]
         user = User.objects.get(id=user_id)
         Post.objects.create(post= post, user_id = user)
-        # request.session["post"] = new_post.post
         return redirect("/wall")
 
 def delete_post(request, post_id):

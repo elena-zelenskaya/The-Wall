@@ -20,7 +20,7 @@
 					Coding Dojo Wall
 				</a>
 				<span class="navbar-text">
-					Welcome, {{request.session.username}}
+					Welcome, {{user.first_name}}
 				</span>
 				<a class="breadcrumbs" href="/logout">Logout</a>
 			</nav>
@@ -92,7 +92,7 @@
 						{% for post in posts %}
 					<div class="post">
 						<h5 class="post_info"><span class="author_info">{{post.user_id.first_name}} {{post.user_id.last_name}} &ndash; {{post.created_at}}</span> 
-							{% if post.user_id.id == request.session.userid %}
+							{% if post.user_id.id == user.id %}
 								<span class="delete_btn"><form action="delete-post/{{post.id}}" method="POST">
 							{% csrf_token %}						
 							
@@ -112,7 +112,7 @@
 						<div class="comments">
 							{% for comment in post.comments.all %}
 							<h6 class="comment_info"><span class="author_info">{{comment.user_id.first_name}} {{comment.user_id.last_name}} &ndash; {{comment.created_at}}</span>
-								{% if comment.user_id.id == request.session.userid %}
+								{% if comment.user_id.id == user.id %}
 								<span class="delete_btn"><form action="delete-comment/{{comment.id}}" method="POST">
 									{% csrf_token %}						
 									

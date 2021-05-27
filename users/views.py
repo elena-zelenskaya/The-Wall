@@ -26,9 +26,8 @@ def register_user(request):
             pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
             new_user = User.objects.create(first_name = first_name, last_name = last_name, birth_date = birth_date, email = email, password = pw_hash)
             request.session['userid'] = new_user.id
-            request.session['username'] = new_user.first_name
-            request.session['in'] = 'registered'
             return redirect("/wall/")
+    return redirect('/')
 
 def login_user(request):
     all_users_emails = []
@@ -45,13 +44,11 @@ def login_user(request):
             logged_user = user[0] 
             if bcrypt.checkpw(request.POST['password_login'].encode(), logged_user.password.encode()):
                 request.session['userid'] = logged_user.id
-                request.session['username'] = logged_user.first_name
-                request.session['fullname'] = f"{logged_user.first_name} {logged_user.last_name}"
-                request.session['in'] = 'logged in'
                 return redirect('/wall/')
             else:
                 messages.error(request, 'Wrong password', extra_tags='login')
                 return redirect("/")
+    return redirect("/")
 
 def logout_user(request):
     request.session.flush()

@@ -17,6 +17,11 @@ form {
 .breadcrumbs {
 	font-size:20px;
 	font-weight:700;
+	color:#e678db;
+}
+
+.breadcrumbs:hover {
+	color:#ea15d5;
 }
 
 .messages {
