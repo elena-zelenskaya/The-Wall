@@ -13,7 +13,7 @@
 		<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 	</head>
 	<body>
-		<div class="container">
+		<div class="container wall">
 			<!-- Image and text -->
 			<nav class="navbar navbar-light bg-light">
 				<a class="navbar-brand" href="#">
@@ -91,7 +91,7 @@
 
 						{% for post in posts %}
 					<div class="post">
-						<h5 class="post_info"><span class="author_info">{{post.user_id.first_name}} {{post.user_id.last_name}} - {{post.created_at}}</span> 
+						<h5 class="post_info"><span class="author_info">{{post.user_id.first_name}} {{post.user_id.last_name}} &ndash; {{post.created_at}}</span> 
 							{% if post.user_id.id == request.session.userid %}
 								<span class="delete_btn"><form action="delete-post/{{post.id}}" method="POST">
 							{% csrf_token %}						
@@ -111,7 +111,7 @@
 						
 						<div class="comments">
 							{% for comment in post.comments.all %}
-							<h6 class="comment_info"><span class="author_info">{{comment.user_id.first_name}} {{comment.user_id.last_name}} - {{comment.created_at}}</span>
+							<h6 class="comment_info"><span class="author_info">{{comment.user_id.first_name}} {{comment.user_id.last_name}} &ndash; {{comment.created_at}}</span>
 								{% if comment.user_id.id == request.session.userid %}
 								<span class="delete_btn"><form action="delete-comment/{{comment.id}}" method="POST">
 									{% csrf_token %}						

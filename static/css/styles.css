@@ -1,5 +1,12 @@
+p {
+	margin: 10px 0;
+}
+
 .container {
 	margin:40px auto;
+}
+.container.wall {
+	margin:10px auto;
 }
 
 form {
@@ -13,12 +20,15 @@ form {
 }
 
 .messages {
-	border: 2px solid red;
-	padding:15px 15px 15px 35px;
-	font-size:18px;
-	font-weight:500;
+	border: 1px solid #dc3545;
+	padding:5px 5px 5px 35px;
+	background-color:#f8d7da;
 }
-
+.messages p {
+	color: #dc3545;
+	font-size: 20px;
+	font-weight:700;
+}
 
 
 nav.navbar {
@@ -42,14 +52,8 @@ label[for="post_comment"] {
 	font-size:18px;
 }
 
-.messages p {
-	color: red;
-	font-sise: 20px;
-	font-weight:700;
-}
-
 .post p {
-	font-size:16px
+	font-size:16px;
 }
 
 .comments {
